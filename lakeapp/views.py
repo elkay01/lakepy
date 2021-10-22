@@ -18,11 +18,18 @@ def index(request):
     featured = Product.objects.filter(featured=True).filter(available=True)
     latest = Product.objects.filter(latest=True)
     available =Product.objects.filter(available=True)
+    slide= Carousel.objects.get(pk=1)
+    slide2=Carousel.objects.get(pk=2)
+    slide3=Carousel.objects.get(pk=3)
+
     
     context = {
         'featured':featured,
         'latest':latest,
         'available':available,
+        'slide':slide,
+        'slid2':slide2,
+        'slide3':slide3,
     }
     
     return render(request, 'index.html', context)
