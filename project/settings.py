@@ -67,7 +67,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'lakeapp.context_processor.cartread',
                 'lakeapp.context_processor.dropdown',
-                # 'lakeapp.context_processor.banner',
+                'lakeapp.context_processor.banner',
             ],
         },
     },
