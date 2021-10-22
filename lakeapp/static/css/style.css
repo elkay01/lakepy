@@ -1,0 +1,22 @@
+.navbar{
+    background: yellowgreen;
+    font-style: italic;
+    text-shadow: violet;
+    
+    
+}
+.carousel-item img{
+    margin: auto;
+}
+
+/* completed page */
+.myuser h2{
+    color:crimson;
+}
+.myuser h3{
+    color: cyan;
+}
+.myuser h4{
+    color: darkgoldenrod;
+}
+/* completed page done */

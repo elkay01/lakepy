@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Home
+{% endblock title %}
+
+
+{% block banner %}
+  {% include "banner.html" %}
+{% endblock banner %}
+
+
+
+{% block content %}
+<!-- child one -->
+<div class="container-fluid">
+    <h1>Featured Products</h1>
+    <div class="row">
+        {% if featured %}
+            {% for item in featured %}
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 mb-3 mt-3 w-25">
+                    <div class="card">
+                        <img src="{{item.image.url}}" class="card-img-top">
+                        <div class="card-body">
+                        <h5 class="card-title">{{item.name}}</h5>
+                        <p class="card-text"> $ {{item.price}}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>
+<!-- child one done -->
+
+<!-- child two -->
+<div class="container-fluid">
+    <h1>Latest Products</h1>
+    <div class="row">
+        {% if latest %}
+            {% for item in latest %}
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 mb-3 mt-3 w-25">
+                    <div class="card">
+                        <img src="{{item.image.url}}" class="card-img-top">
+                        <div class="card-body">
+                        <h5 class="card-title">{{item.name}}</h5>
+                        <p class="card-text"> $ {{item.price}}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>
+<!-- child two done -->
+
+<!-- child three -->
+<div class="container-fluid">
+    <h1>Available Products</h1>
+    <div class="row">
+        {% if available %}
+            {% for item in available %}
+                <div class="col-12 col-sm-12 col-md-6 col-lg-3 mb-3 mt-3 w-25">
+                    <div class="card">
+                        <img src="{{item.image.url}}" class="card-img-top">
+                        <div class="card-body">
+                        <h5 class="card-title">{{item.name}}</h5>
+                        <p class="card-text"> $ {{item.price}}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>
+<!-- child three done -->
+
+{% endblock content %} 

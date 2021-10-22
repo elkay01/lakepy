@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Product details
+{% endblock title %}
+
+
+
+{% block content %}
+<!-- content section -->
+<div class="container-fluid">
+    <h1>Product details</h1>
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-3 mb-3 mt-3 w-25"></div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-3 mb-3 mt-3 w-25">
+            <div class="card w-100 text-center pt-3">
+                <img src="{{details.image.url}}" class="card-img-top w-100">
+                <div class="card-body mt-3">
+                <h5 class="card-title">Product: {{details.name}}</h5>
+                <h5 class="card-title">Category: {{details.category}}</h5>
+                <p class"card-text">$ {{details.price}}</p>
+                <p class"card-text">{{details.description}}</p>
+                </div>
+                <form style="width: 400px;" method="POST" action="{% url 'addtocart' %}">
+                    {% csrf_token %}
+                    <input type="number" name="quantity" value="1" min="{{details.min}}" max="{{details.max}}" style='width:40px;'>
+                    <input type="hidden" name="itemid" value="{{details.id}}">
+                    <button type="submit" class="btn btn-primary">Add to cart</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-3 mb-3 mt-3 w-25"></div>
+    </div>
+</div>
+<!-- content section done -->
+
+  
+{% endblock content %}
