@@ -211,7 +211,7 @@ def placeorder(request):
     if request.method=='POST':
         api_key='sk_test_11483da27a28a2304414f2ca3be5a7c88bd121a7'
         curl= 'https://api.paystack.co/transaction/initialize'
-        cburl= 'http://52.53.202.188/completed'
+        cburl= 'http://54.176.0.127/completed'
         total= float(request.POST['total']) *100
         cart_code = request.POST['cart_code']
         pay_code= str(uuid.uuid4())
